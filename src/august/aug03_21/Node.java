@@ -8,16 +8,19 @@
 package august.aug03_21;
 
 public class Node {
+    //instance variable of Node class
     private int data;
     private Node left;
     private Node right;
 
+    //constructor
     public Node(int data) {
         this.data = data;
         this.left = null;
         this.right = null;
     }
 
+    //All getter and setter methods of the instance variable
     public int getData() {
         return data;
     }

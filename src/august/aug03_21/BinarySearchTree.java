@@ -11,22 +11,31 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class BinarySearchTree {
+    // instance variable
     public Node root;
 
+    // constructor for initialise the root to null BYDEFAULT
     public BinarySearchTree() {
         this.root = null;
     }
+    // insert method to insert the new Date
     public void insert(int newData){
         this.root=insert(root, newData);
     }
 
     private Node insert(Node root, int newData) {
+        // Base Case: root is null or not
         if (root == null) {
+            // Insert the first node, if root is null.
             root = new Node(newData);
             return root;
-        } else if (root.getData() >= newData) {
+        }
+        // Here checking for root data is greater or equal to newData or not
+        else if (root.getData() >= newData) {
+           // if current root data is greater than the new data then now process the left sub-tree
             root.setLeft(insert(root.getLeft(), newData));
         } else {
+            // if current root data is less than the new data then now process the right sub-tree
             root.setRight(insert(root.getRight(), newData));
         }
         return root;
@@ -54,6 +63,7 @@ public class BinarySearchTree {
                 }
             }
         }
+        System.out.println();
     }
 
 
