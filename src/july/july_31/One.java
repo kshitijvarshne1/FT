@@ -11,7 +11,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,14 +22,13 @@ public class One {
         System.out.println("You entered a valid integer: " + validDecimal());
         System.out.println("Enter data file of name and number of items purchases:");
         String fileName = sc.next();
-        ArrayList<ArrayList<String>> res= getFileData(fileName);
-        if(res.get(0).size()==0){
+        ArrayList<ArrayList<String>> res = getFileData(fileName);
+        if (res.get(0).size() == 0) {
             System.out.println("can't find your input file:" + fileName);
-        }
-        else{
+        } else {
             ArrayList<String> lastName = res.get(0);
-            ArrayList<String> noOfItems= res.get(1);
-            showFilaData(lastName,noOfItems);
+            ArrayList<String> noOfItems = res.get(1);
+            showFilaData(lastName, noOfItems);
         }
         fileAnalysis(fileName);
     }
@@ -80,7 +78,7 @@ public class One {
         String filePath = "C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\july\\july_31\\";
         File file = new File(filePath + fileName);
         ArrayList<String> lastName = new ArrayList<>();
-        ArrayList<String> noOfItems= new ArrayList<>();
+        ArrayList<String> noOfItems = new ArrayList<>();
         try {
             // for input the file
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -93,14 +91,15 @@ public class One {
         } catch (Exception e) {
             System.out.println("can't find your input file:" + fileName);
         }
-        ArrayList<ArrayList<String>> res= new ArrayList<>();
+        ArrayList<ArrayList<String>> res = new ArrayList<>();
         res.add(lastName);
         res.add(noOfItems);
         return res;
     }
+
     private static void showFilaData(ArrayList<String> lastName, ArrayList<String> noOfItems) {
-        for(int i=0;i<lastName.size();i++){
-            System.out.println(lastName.get(i)+" * "+noOfItems.get(i));
+        for (int i = 0; i < lastName.size(); i++) {
+            System.out.println(lastName.get(i) + " * " + noOfItems.get(i));
         }
     }
 
@@ -108,31 +107,28 @@ public class One {
         String filePath = "C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\july\\july_31\\";
         File file = new File(filePath + fileName);
         ArrayList<String> lastName = new ArrayList<>();
-        ArrayList<String> noOfItems= new ArrayList<>();
+        ArrayList<String> noOfItems = new ArrayList<>();
         try {
             // for input the file
             BufferedReader br = new BufferedReader(new FileReader(file));
+            int size = (int) file.length();
+            size++;
             String st;
-            int noOfDigits=0;
-            int noOfLowerCase=0;
-            int size=0;
+            int noOfDigits = 0;
+            int noOfLowerCase = 0;
             while ((st = br.readLine()) != null) {
                 String[] temp = st.split(" ");
-                noOfDigits+=temp[1].length();
-                String s= temp[0];
+                noOfDigits += temp[1].length();
+                String s = temp[0];
                 for (int i = 0; i < s.length(); i++) {
-                    if(s.charAt(i)>='a' && s.charAt(i)<='z'){
+                    if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
                         noOfLowerCase++;
                     }
                 }
-                byte[] utf16Bytes= temp[1].getBytes("UTF-16BE");
-                size+=utf16Bytes.length;;
-                utf16Bytes= temp[0].getBytes(StandardCharsets.UTF_8);
-                size+=utf16Bytes.length;
             }
-            System.out.println("Number of Digits:"+noOfDigits);
-            System.out.println("Number of lower-case letter: "+noOfLowerCase);
-            System.out.println("The file has "+size+" bytes");
+            System.out.println("Number of Digits:" + noOfDigits);
+            System.out.println("Number of lower-case letter: " + noOfLowerCase);
+            System.out.println("The file has " + size  + " bytes");
             return;
         } catch (Exception e) {
             System.out.println("can't find your input file:" + fileName);
