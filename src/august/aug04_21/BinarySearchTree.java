@@ -8,5 +8,24 @@
 package august.aug04_21;
 
 public class BinarySearchTree {
+    class Node{
+        public int data;
+        public Node left;
+        public Node right;
+
+        public Node(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+    }
+    public Node root;
+    public BinarySearchTree(){
+        this.root=null;
+    }
+
+    public static void main(String[] args) {
+
+    }
 }
 
