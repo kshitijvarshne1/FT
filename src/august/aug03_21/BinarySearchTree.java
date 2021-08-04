@@ -7,10 +7,22 @@
 
 package august.aug03_21;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class BinarySearchTree {
+
+    public class Node {
+        //instance variable of Node class
+        public int data;
+        public Node left;
+        public Node right;
+
+        //constructor
+        public Node(int data) {
+            this.data = data;
+            this.left = null;
+            this.right = null;
+        }
+
+    }
     // instance variable
     public Node root;
 
@@ -18,54 +30,58 @@ public class BinarySearchTree {
     public BinarySearchTree() {
         this.root = null;
     }
+
     // insert method to insert the new Date
-    public void insert(int newData){
-        this.root=insert(root, newData);
+    public void insert(int newData) {
+        this.root = insert(root, newData);
     }
 
-    private Node insert(Node root, int newData) {
+    public Node insert(Node root, int newData) {
         // Base Case: root is null or not
         if (root == null) {
-            // Insert the first node, if root is null.
+            // Insert the new data, if root is null.
             root = new Node(newData);
+            // return the current root to his sub tree
             return root;
         }
         // Here checking for root data is greater or equal to newData or not
-        else if (root.getData() >= newData) {
-           // if current root data is greater than the new data then now process the left sub-tree
-            root.setLeft(insert(root.getLeft(), newData));
+        else if (root.data >= newData) {
+            // if current root data is greater than the new data then now process the left sub-tree
+            root.left = insert(root.left, newData);
         } else {
             // if current root data is less than the new data then now process the right sub-tree
-            root.setRight(insert(root.getRight(), newData));
+            root.right = insert(root.left, newData);
         }
         return root;
     }
 
-    public void bfs(){
-        if(root!=null){
-            Queue<Node> q= new LinkedList<>();
-            q.add(root);
-            q.add(null);
-            while(!q.isEmpty()){
-                Node temp = q.poll();
-                if(temp!=null){
-                    System.out.print(temp.getData()+" ");
-                    if(temp.getLeft()!=null){
-                        q.add(temp.getLeft());
-                    }
-                    if(temp.getRight()!=null){
-                        q.add(temp.getRight());
-                    }
-                }
-                else if(!q.isEmpty() && temp==null){
-                    q.add(null);
-                    System.out.println();
-                }
-            }
-        }
-        System.out.println();
+    //Traversal
+    public void preorder() {
+        preorder(root);
     }
 
+    public void preorder(Node root) {
+        if (root == null) {
+            return;
+        }
+        System.out.print(root.data + " ");
+        preorder(root.left);
+        preorder(root.right);
+
+    }
+    public static void main(String[] args) {
+        // Creating the object of BinarySearchTree class
+        BinarySearchTree bst = new BinarySearchTree();
+        // call the method insert
+        bst.insert(100);
+        bst.insert(90);
+        bst.insert(110);
+        bst.insert(80);
+        bst.insert(95);
+        bst.insert(105);
+        bst.insert(115);
+        bst.preorder();
+    }
 
 }
 
