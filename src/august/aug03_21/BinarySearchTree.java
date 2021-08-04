@@ -50,7 +50,7 @@ public class BinarySearchTree {
             root.left = insert(root.left, newData);
         } else {
             // if current root data is less than the new data then now process the right sub-tree
-            root.right = insert(root.left, newData);
+            root.right = insert(root.right, newData);
         }
         return root;
     }
