@@ -7,12 +7,16 @@
 
 package august.aug08_21;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
+import java.io.*;
 
 public class Cookie {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        // for output the result
+        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug08_21\\output.txt");
+        FileWriter fwout = new FileWriter(fileOut);
+        PrintWriter pw = new PrintWriter(fwout);
+
+        // For input the file data
         File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\testcase_generator\\inp.txt");
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
@@ -44,6 +48,8 @@ public class Cookie {
                 else if(i==2){
                     k= Integer.parseInt(st);
                     i=0;
+                    int out = cookieDist(arr,k);
+                    pw.println(out);
 
                     // send the data to the method
                 }
@@ -51,6 +57,47 @@ public class Cookie {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        pw.close();
+    }
+    static boolean isValid(int[] a, int n, int mid, int k) {
+        int cokkie = 1;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += a[i];
+            if (sum > mid) {
+                cokkie++;
+                sum = a[i];
+            }
+            if (cokkie > k) {
+                return false;
+            }
+        }
+        return true;
+    }
+    static int cookieDist(int[] a, int k) {
+        int n = a.length;
+        if (n < k) {
+            return -1;
+        }
+        int sum = 0;
+        int maxi = -1;
+        for (int i = 0; i < n; i++) {
+            maxi = Math.max(maxi, a[i]);
+            sum += a[i];
+        }
+        int s = maxi;
+        int e = sum;
+        int res = -1;
+        while (s <= e) {
+            int mid = s + (e - s) / 2;
+            if (isValid(a, n, mid, k) == true) {
+                res = mid;
+                e = mid - 1;
+            } else {
+                s = mid + 1;
+            }
+        }
+        return res;
     }
 }
 
