@@ -7,6 +7,21 @@
 
 package testcase_generator;
 
+import java.io.*;
+
+
 public class InputFromFile {
+    public static void main(String[] args) throws IOException {
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\testcase_generator\\inp.txt");
+        try {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            String st;
+            while ((st = br.readLine()) != null) {
+                System.out.println(st);
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
 
