@@ -6,9 +6,6 @@ Second line will contain the size of array , N
 Next 'N' lines contains N integers denoting array arr.
 The last line will contain Integer k.
 
-Output Format --
-return minimum largest sum if found else return -1.
-
 Constaints
 1<=T<=10000
 1<=N<=1000
@@ -16,13 +13,9 @@ Constaints
 1<=k<=min(50,N)
 
 Example
-Input:
-1
-5
-7 2 5 10 8 2
+Input: 1 5 7 2 5 10 8 2
 
-Output:
-18
+Output: 18
 
 Output Description
 k=2, arr=[7,2,10,8]
