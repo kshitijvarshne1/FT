@@ -14,11 +14,11 @@ import java.io.PrintWriter;
 
 public class TestCase {
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\testcase_generator\\inp.txt");
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\testcase_generator\\input2.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         int minT = 1;
-        int maxT = 10;
+        int maxT = 1000;
         int rangeT = maxT - minT + 1;
         int t = (int) (Math.random() * rangeT) + minT;
         pw.println(t);

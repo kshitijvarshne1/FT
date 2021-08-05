@@ -12,12 +12,12 @@ import java.io.*;
 public class Cookie {
     public static void main(String[] args) throws IOException {
         // for output the result
-        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug08_21\\output.txt");
+        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug08_21\\output2.txt");
         FileWriter fwout = new FileWriter(fileOut);
         PrintWriter pw = new PrintWriter(fwout);
 
         // For input the file data
-        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\testcase_generator\\inp.txt");
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\testcase_generator\\input2.txt");
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
@@ -31,7 +31,6 @@ public class Cookie {
                 if(check==0){
                     check=1;
                     t= Integer.parseInt(st);
-                    System.out.println(t);
                 }
                 else if(i==0){
                     n= Integer.parseInt(st);
