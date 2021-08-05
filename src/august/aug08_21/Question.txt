@@ -3,7 +3,7 @@ Given an array arr, containing price of 'N' cookies, which are to be distributed
 Input Format --
 First line will contain the Number of Tesecases
 Second line will contain the size of array , N
-Next 'N' lines contains N integers denoting array arr.
+Next 'N' lines contains N integers denoting array, arr.
 The last line will contain Integer k.
 
 Output Format --
