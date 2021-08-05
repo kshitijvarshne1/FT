@@ -1,0 +1,24 @@
+Given an array arr, containing price of 'N' cookies, which are to be distributed to 'k' children by splitting the array into 'k' continuous subarrays {containing at least 1 cookies}. You have to divide the array in such a way, that the largest sum of prices among these 'k' subarrays is minimum possible . Return that minimised largest sum.
+
+Input Format --
+First line will contain the Number of Tesecases
+Second line will contain the size of array , N
+Next 'N' lines contains N integers denoting array arr.
+The last line will contain Integer k.
+
+Constaints
+1<=T<=10000
+1<=N<=1000
+0<=arr[i]<=1000
+1<=k<=min(50,N)
+
+Example
+Input: 1 5 7 2 5 10 8 2
+
+Output: 18
+
+Output Description
+k=2, arr=[7,2,10,8]
+Child 1-> 7,2,5 -> 14
+Child 2-> 10,8 -> 18
+18 is the minimum largest sum that could be of a subarray when given array is splitted into 2 non-empty subarrays
