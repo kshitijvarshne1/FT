@@ -1,15 +1,13 @@
 Subash and Shivam are best friends. Shivam was asked a question in his Facebook interview.
 He found this problem as one of the best problems he has ever been asked in an interview, so he asked Subash to solve the problem.
 The problem is as follows:
-
-
 The interviewer gave a value ‘N’ and also gave him 2 * N - 1 number.
 The sign of the number is not limited to positive only. The interviewer allowed an operation in which Shivam can select any N numbers given to him, and reverse the sign of every N number he selects.
 The interviewer allowed Shivam to perform this operation as many times as he wanted. After Shivam has performed this operation as many times as he wishes, the interviewer needs the maximum sum of the entire array.
 
 
 Input Format --
-First line will contain the Number of Tesecases
+First line will contain the Number of Testcases
 Second line will contain the size of array , N
 Next 'N' lines contains N integers denoting array, arr.
 
