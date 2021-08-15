@@ -33,7 +33,7 @@ public class TestCaseGen {
                 pw.print(ele+" ");
             }
             pw.println();
-            int k = (int) (Math.random() * n-5) + 1;
+            int k = (int) (Math.random() * n) + 1;
             pw.println(k);
         }
         pw.close();
