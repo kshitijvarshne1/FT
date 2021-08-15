@@ -58,14 +58,21 @@ public class Card {
 
     private static int card(int[] arr, int n, int k) {
         int res = 0;
-        for (int start = n - k, i = start, win = 0; i < n + k; ++i) {
-            win += arr[i % n];
-            if (i - start >= k) {
-                win -= arr[(i - k) % n];
-            }
-            res = Math.max(win, res);
+        int l = 0;
+        int r = arr.length - k;
+
+        int sum = 0;
+        for (int i = r; i < arr.length; i++) {
+            sum += arr[i];
         }
-        return res;
+        int ans = sum;
+        while (r < arr.length) {
+            sum += arr[l] - arr[r];
+            ans = Math.max(ans, sum);
+            l++;
+            r++;
+        }
+        return ans;
     }
 
 }
