@@ -23,7 +23,7 @@ public class Solution {
             }
             int[] ans = cars(arr, n);
             for (int i = 0; i < ans.length; i++) {
-                System.out.print(ans[i] + " ");
+                System.out.print(ans[i] + ", ");
             }
         }
     }
@@ -72,9 +72,6 @@ public class Solution {
                 }
             }
 
-        }
-        for (Map.Entry<String, Integer> s : mp.entrySet()) {
-            System.out.println(s.getKey() + " " + s.getValue());
         }
 
         return ans;

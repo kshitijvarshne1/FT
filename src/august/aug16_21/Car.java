@@ -15,12 +15,12 @@ public class Car {
     public static void main(String[] args) throws IOException {
 
         // for output the result
-        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug16_21\\output2.txt");
+        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug16_21\\output1.txt");
         FileWriter fwout = new FileWriter(fileOut);
         PrintWriter pw = new PrintWriter(fwout);
 
         // For input the file data
-        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug16_21\\input2.txt");
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug16_21\\input1.txt");
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
@@ -47,7 +47,7 @@ public class Car {
                         int [] res=cars(arr, n);
                         k = 0;
                         for (int re : res) {
-                            pw.print(re+" ");
+                            pw.print(re+", ");
                         }
                         pw.println();
                     }
