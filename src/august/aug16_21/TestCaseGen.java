@@ -15,17 +15,17 @@ import java.util.Random;
 
 public class TestCaseGen {
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug16_21\\input2.txt");
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug16_21\\input1.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         int minT = 1;
-        int maxT = 500;
+        int maxT = 50;
         int rangeT = maxT - minT + 1;
         int t = (int) (Math.random() * rangeT) + minT;
         pw.println(t);
         for (int i = 0; i < t; i++) {
             int minN = 5;
-            int maxN = 50;
+            int maxN = 10;
             int rangeN = maxN - minN + 1;
             int n = (int) (Math.random() * rangeN) + minN;
             pw.println(n);
@@ -38,7 +38,6 @@ public class TestCaseGen {
                 }
                 pw.println();
             }
-            pw.println();
         }
         pw.close();
 
