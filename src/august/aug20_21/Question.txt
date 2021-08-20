@@ -12,3 +12,38 @@ t="abacaba", the letter 'b' is selected, then s="aacaa";
 t="abacabaaacaa", the letter 'a' is selected, then s="c";
 t="abacabaaacaac", the letter 'c' is selected, then s="" (the empty string).
 You need to restore the initial value of the string s using only the final value of t and find the order of removing letters from s.
+
+
+
+Input
+The first line contains one integer T (1≤T≤104) — the number of test cases. Then T test cases follow.
+
+Each test case contains one string t consisting of lowercase letters of the Latin alphabet. The length of t doesn't exceed 5⋅105. The sum of lengths of all strings t in the test cases doesn't exceed 5⋅105.
+
+Output
+For each test case output in a separate line:
+
+−1, if the answer doesn't exist;
+two strings separated by spaces. The first one must contain a possible initial value of s. The second one must contain a sequence of letters — it's in what order one needs to remove letters from s to make the string t. E.g. if the string "bac" is outputted, then, first, all occurrences of the letter 'b' were deleted, then all occurrences of 'a', and then, finally, all occurrences of 'c'. If there are multiple solutions, print any one.
+
+
+Input
+7
+abacabaaacaac
+nowyouknowthat
+polycarppoycarppoyarppyarppyrpprppp
+isi
+everywherevrywhrvryhrvrhrvhv
+haaha
+qweqeewew
+
+
+Output
+abacaba bac
+-1
+polycarp lcoayrp
+is si
+everywhere ewyrhv
+-1
+-1
+
