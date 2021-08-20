@@ -44,3 +44,5 @@ Test Case 2: We can change the salary of the first person to 2 and use 2 as the 
 
 Test Case 3: We can use 2 as the denomination and we need not change the salary of any person. So in total we need 1+1 = 2 notes.
 
+
+

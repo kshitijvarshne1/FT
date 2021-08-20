@@ -15,17 +15,21 @@ public class Main {
         int t = sc.nextInt();
         while (t-- > 0) {
             int n = sc.nextInt();
-            solve(n);
+            int [] a= new int[2*n];
+            for (int i = 0; i < 2 * n; i++) {
+                a[i]= sc.nextInt();
+            }
+            System.out.println(solve(a,n));
         }
     }
 
-    public static void solve(int n) {
+    public static String solve(int a[], int n) {
         Scanner sc = new Scanner(System.in);
         int o = 0;
         int e = 0;
 
         for (int i = 0; i < 2 * n; i++) {
-            int k = sc.nextInt();
+            int k = a[i];
             if (k == 1) {
                 o++;
             } else if (k % 2 == 0) {
@@ -34,11 +38,13 @@ public class Main {
                 o++;
             }
         }
+        String res="";
         if (o == e) {
-            System.out.println("YES");
+            res="YES";
         } else {
-            System.out.println("NO");
+            res="NO";
         }
+        return res;
     }
 }
 
