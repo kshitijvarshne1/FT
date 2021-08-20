@@ -23,70 +23,52 @@ public class Solution {
 
     public static void solve() {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        int n = s.length();
-        HashMap<Character, Integer> g = new HashMap<>();
-        for (int i = 0; i < n; ++i) {
-            if (g.containsKey(s.charAt(i)) == true) {
-                g.put(s.charAt(i), g.get(s.charAt(i)) + 1);
-            } else {
-                g.put(s.charAt(i), 1);
+        int n = sc.nextInt();
+        long[] a = new long[n];
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextLong();
+        }
+        long sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum = sum + a[i];
+        }
+        if (a.length == 1) {
+            System.out.println(1);
+        } else {
+            long[] f = new long[n];
+            f[0] = a[0];
+            for (int i = 1; i < n; i++) {
+                f[i] = gcd(f[i - 1], a[i]);
             }
-        }
-        int dist = g.size();
-        int mask = 0;
-        ArrayList<Pair> order = new ArrayList<>();
-        for (int i = n - 1; i >= 0; --i) {
-            if ((mask & (1 << (s.charAt(i) - 'a'))) == 0) {
-                mask |= (1 << (s.charAt(i) - 'a'));
-                order.add(new Pair(i, s.charAt(i)));
+            long[] b = new long[n];
+            b[b.length - 1] = a[a.length - 1];
+            for (int i = a.length - 2; i >= 0; i--) {
+                b[i] = gcd(b[i + 1], a[i]);
             }
-        }
-
-        Collections.reverse(order);
-        int sze = 0;
-        for (int i = 1; i <= dist; ++i) {
-            if (g.get(order.get(i - 1).b) % i == 1) {
-                System.out.println("-1");
-                return;
+            long[] h = new long[n];
+            h[0] = b[1];
+            h[n - 1] = f[n - 2];
+            for (int i = 1; i < n - 1; i++) {
+                h[i] = gcd(f[i - 1], b[i + 1]);
             }
-            sze += g.get(order.get(i - 1).b) / i;
-        }
-
-        String ans = s.substring(0, sze);
-        String chk = ans;
-        String t = "";
-        for (int i = 0; i < dist; ++i) {
-            t += chk;
-            String tmp = "";
-            for (int j = 0; j < chk.length(); ++j) {
-                if (chk.charAt(j) != order.get(i).b) {
-                    tmp += String.valueOf(chk.charAt(i));
-                }
+            long aaa = Long.MAX_VALUE;
+            long s;
+            for (int i = 0; i < n; i++) {
+                s = ((sum - a[i]) / h[i]) + 1;
+                aaa = Math.min(s, aaa);
             }
-
-            chk = tmp;
+            System.out.println(aaa);
         }
-
-        if (s != t) {
-            System.out.println(-1);
-            return;
-        }
-        String ordr = "";
-        for (int i = 0; i < dist; ++i) {
-            ordr += (order.get(i).b);
-        }
-        System.out.println(ans + " " + ordr);
     }
 
-    static class Pair {
-        int a;
-        char b;
-
-        public Pair(int a, char b) {
-            this.a = a;
-            this.b = b;
+    public static long gcd(long a, long b) {
+        while (b > 0) {
+            long temp = b;
+            b = a % b;
+            a = temp;
         }
+        return a;
     }
+
 }
 
