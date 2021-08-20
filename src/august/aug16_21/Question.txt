@@ -17,7 +17,7 @@ Next 'N' lines contains N string denoting array, arr.
 Output Format --
 print the maximum score you can obtain
 
-Constaints
+Constraints
 1<=T<=1000
 1<=N<=100
 arr[i]=0 or arr[i]=1

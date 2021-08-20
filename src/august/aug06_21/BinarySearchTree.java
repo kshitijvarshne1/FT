@@ -73,13 +73,11 @@ public class BinarySearchTree {
         // Creating the object of BinarySearchTree class
         BinarySearchTree bst = new BinarySearchTree();
         // call the method insert
-        bst.insert(100);
-        bst.insert(90);
-        bst.insert(110);
-        bst.insert(80);
-        bst.insert(95);
-        bst.insert(105);
-        bst.insert(115);
+        bst.insert(8);
+        bst.insert(5);
+        bst.insert(3);
+        bst.insert(7);
+        bst.insert(9);
         System.out.println(bst.findMaximum());
     }
 }
