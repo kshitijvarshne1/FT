@@ -8,5 +8,8 @@
 package august.aug23_21;
 
 public class Calculator {
+    public static void main(String[] args) {
+
+    }
 }
 
