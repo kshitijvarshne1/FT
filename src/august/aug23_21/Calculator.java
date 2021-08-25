@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
         String[] operations = {"", "addition", "subtraction", "multiply", "division"};
+        // Scanner that will read the integer
         Scanner sc = new Scanner(System.in);
         System.out.println("Welcome to John Doe Handy Calculator");
 
@@ -32,8 +33,8 @@ public class Calculator {
                     repeat1 = true;
                 }
             }
-            float val1 = 0.0f;
-            float val2 = 0.0f;
+            float myFloat1 = 0.0f;
+            float myFLoat2 = 0.0f;
             if (option <= 4) {
                 System.out.println("Please enter two float number to " + operations[option] + " separated by space");
 
@@ -41,7 +42,7 @@ public class Calculator {
                 boolean repeat2 = true;
                 while (repeat2) {
                     try {
-                        val1 = sc.nextFloat();
+                        myFloat1 = sc.nextFloat();
                         repeat2 = false;
                     } catch (Exception e) {
                         System.out.println("You have entered wrong format value");
@@ -54,7 +55,7 @@ public class Calculator {
                 while (repeat3) {
 
                     try {
-                        val2 = sc.nextFloat();
+                        myFLoat2 = sc.nextFloat();
                         repeat3 = false;
                     } catch (Exception e) {
                         System.out.println("You have entered wrong format value");
@@ -64,12 +65,12 @@ public class Calculator {
                 }
                 // if value 2 is 0.0 and operation is division
                 // again input for both values
-                if (operations[option].equalsIgnoreCase("division") && val2 == 0.0) {
+                if (operations[option].equalsIgnoreCase("division") && myFLoat2 == 0.0) {
                     System.out.println("You have entered invalid floats please re -enter");
                     repeat2 = true;
                     while (repeat2) {
                         try {
-                            val1 = sc.nextFloat();
+                            myFloat1 = sc.nextFloat();
                             repeat2 = false;
                         } catch (Exception e) {
                             System.out.println("You have entered wrong format value");
@@ -82,8 +83,8 @@ public class Calculator {
                     while (repeat3) {
 
                         try {
-                            val2 = sc.nextFloat();
-                            repeat3 = val2 == 0.0;
+                            myFLoat2 = sc.nextFloat();
+                            repeat3 = myFLoat2 == 0.0;
                         } catch (Exception e) {
                             System.out.println("You have entered wrong format value");
                             sc.next();
@@ -95,23 +96,23 @@ public class Calculator {
             // distinguish the option according to requirement
             switch (option) {
                 case 1:
-                    float result1 = val1 + val2;
-                    System.out.print("Result of addition of " + val1 + "  and " + val2 + " is ");
+                    float result1 = myFloat1 + myFLoat2;
+                    System.out.print("Result of addition of " + myFloat1 + "  and " + myFLoat2 + " is ");
                     System.out.printf("%.2f\n", result1);
                     break;
                 case 2:
-                    float result2 = val1 - val2;
-                    System.out.print("Result of subtraction from " + val1 + "  to " + val2 + " is ");
+                    float result2 = myFloat1 - myFLoat2;
+                    System.out.print("Result of subtraction from " + myFloat1 + "  to " + myFLoat2 + " is ");
                     System.out.printf("%.2f\n", result2);
                     break;
                 case 3:
-                    float result3 = val1 * val2;
-                    System.out.print("Result of multiply of " + val1 + "  and " + val2 + " is ");
+                    float result3 = myFloat1 * myFLoat2;
+                    System.out.print("Result of multiply of " + myFloat1 + "  and " + myFLoat2 + " is ");
                     System.out.printf("%.2f\n", result3);
                     break;
                 case 4:
-                    float result4 = val1 / val2;
-                    System.out.print("Result of division of " + val1 + "  and " + val2 + " is ");
+                    float result4 = myFloat1 / myFLoat2;
+                    System.out.print("Result of division of " + myFloat1 + "  and " + myFLoat2 + " is ");
                     System.out.printf("%.2f\n", result4);
                     break;
                 case 5:
