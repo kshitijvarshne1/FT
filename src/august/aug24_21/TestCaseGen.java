@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 
 public class TestCaseGen {
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug20_21\\input1.txt");
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug24_21\\input.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         int minT = 1;
@@ -28,11 +28,6 @@ public class TestCaseGen {
             int rangeN = maxN - minN + 1;
             int n = (int) (Math.random() * rangeN) + minN;
             pw.println(n);
-            for (int i1 = 0; i1 < n; i1++) {
-                int ele = ((int) (Math.random() * 1000) + 1);
-                pw.print(ele + " ");
-            }
-            pw.println();
         }
         pw.close();
     }
