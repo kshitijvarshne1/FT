@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 
 public class TestCaseGen {
     public static void main(String[] args) throws IOException {
-        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug24_21\\input.txt");
+        File file = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\august\\aug24_21\\input2.txt");
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         int minT = 1;
