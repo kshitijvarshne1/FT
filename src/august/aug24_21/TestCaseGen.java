@@ -18,7 +18,7 @@ public class TestCaseGen {
         FileWriter fw = new FileWriter(file);
         PrintWriter pw = new PrintWriter(fw);
         int minT = 1;
-        int maxT = 1000;
+        int maxT = 100;
         int rangeT = maxT - minT + 1;
         int t = (int) (Math.random() * rangeT) + minT;
         pw.println(t);
@@ -28,6 +28,11 @@ public class TestCaseGen {
             int rangeN = maxN - minN + 1;
             int n = (int) (Math.random() * rangeN) + minN;
             pw.println(n);
+            for (int i1 = 0; i1 < n; i1++) {
+                int ele = ((int) (Math.random() * 100) + 1);
+                pw.print(ele + " ");
+            }
+            pw.println();
         }
         pw.close();
     }
