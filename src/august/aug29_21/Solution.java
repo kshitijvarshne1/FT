@@ -68,7 +68,6 @@ public class Solution {
             for (int i = 0; i < tasks.length; i++)
                 tasks[i] = a[i];
         }
-
     }
 }
 
