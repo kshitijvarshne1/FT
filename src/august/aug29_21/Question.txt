@@ -19,7 +19,7 @@ Input:-
 3 1 3 1 1
 8
 
-1>=t<=100
+1<=t<=100
 n == tasks.length
 1 <= n <= 14
 1 <= tasks[i] <= 10
@@ -27,3 +27,5 @@ max(tasks[i]) <= sessionTime <= 15
 
 Output
 2
+
+
