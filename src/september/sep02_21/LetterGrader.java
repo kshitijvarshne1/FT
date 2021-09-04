@@ -54,7 +54,6 @@ public class LetterGrader {
 
             }
             i++;
-
             classAverageArrayList.add(new ClassAverage(average / size, (int)minimum, (int)maximum));
         }
         System.out.println("Here is the class Average");
@@ -74,7 +73,6 @@ public class LetterGrader {
             System.out.printf("%-10s", classAverageArrayList.get(j).maximum);
         }
         System.out.println();
-
     }
 
     public void readScore() {
