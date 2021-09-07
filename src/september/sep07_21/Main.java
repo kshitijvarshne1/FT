@@ -12,11 +12,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\september\\output1.txt");
+        File fileOut = new File("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\september\\sep07_21\\output1.txt");
         FileWriter fwout = new FileWriter(fileOut);
         PrintWriter pw = new PrintWriter(fwout);
 
-        InputStream inputStream = new FileInputStream("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\september\\intput1.txt");
+        InputStream inputStream = new FileInputStream("C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\september\\sep07_21\\input.txt");
         Scanner sc = new Scanner(inputStream);
         int t = Integer.parseInt(sc.nextLine());
         while (t-- > 0) {
