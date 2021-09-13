@@ -102,7 +102,7 @@ public class LetterGrader {
     // method to read data from the file
     public void readScore() {
         String path = "C:\\Users\\kshitij varshney\\IdeaProjects\\FT\\src\\september\\sep02_21\\";
-        // add path and file Name to inputFile obejct
+        // add path and file Name to inputFile object
         File inputFile = new File(path + this.inputFile);
         if (!inputFile.exists()) {
             // if not exist then simply exit the program and print then error
