@@ -18,6 +18,37 @@ public class Main {
         System.out.println("Enter the theater name");
         String tName = sc.next();
         Theater theater = new Theater(n, m, tName);
+        while (true) {
+            show();
+            int option = sc.nextInt();
+            switch (option) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    System.out.println("Thanks for here!!!!!");
+                    System.exit(1);
+                default:
+                    System.out.println("Invalid choice !!!!!!");
+                    break;
+            }
+        }
+    }
+
+    public static void show() {
+        System.out.println("1. show seat price\n" +
+                "2. find the seat by sear number(row and column)\n" +
+                "3. find available seats by price\n" +
+                "4. purchase the tickets\n" +
+                "5. print the seating chart\n" +
+                "6. exit");
     }
 
 }
