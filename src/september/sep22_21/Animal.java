@@ -22,13 +22,22 @@ public class Animal {
         this.age = age;
         this.training = training;
     }
+
     // constructor -> overload constructor with 2 variable
     public Animal(String name, String type) {
         this.name = name;
         this.type = type;
+        this.age = 0;
+        this.training = false;
     }
+
     // default constructor
+    // by default for type is cat
     public Animal() {
+        this.name = "";
+        this.type = "cat";
+        this.age = 0;
+        this.training = false;
     }
 
     // getter and setter method to get and initialise the values
@@ -67,12 +76,8 @@ public class Animal {
     // toString method to print the details of the Object of animal
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", type='" + type + '\'' +
-                ", age=" + age +
-                ", training=" + training +
-                '}' + "\n";
+        String trained = this.isTraining() ? "trained" : "not trained";
+        return "the pets name is " + this.getName() + " the pet's age is " + this.getAge() + " the pet is " + trained ;
     }
 }
 
