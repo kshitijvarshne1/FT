@@ -7,24 +7,31 @@
 
 package september.sep22_21;
 
+// class Animal
 public class Animal {
+    // instance variable
     private String name;
     private String type;
     private int age;
     private boolean training;
 
+    // constructor -> overload constructor with 4 variable
     public Animal(String name, String type, int age, boolean training) {
         this.name = name;
         this.type = type;
         this.age = age;
         this.training = training;
     }
-
+    // constructor -> overload constructor with 2 variable
     public Animal(String name, String type) {
         this.name = name;
         this.type = type;
     }
+    // default constructor
+    public Animal() {
+    }
 
+    // getter and setter method to get and initialise the values
     public String getName() {
         return name;
     }
@@ -57,6 +64,7 @@ public class Animal {
         this.training = training;
     }
 
+    // toString method to print the details of the Object of animal
     @Override
     public String toString() {
         return "Animal{" +
