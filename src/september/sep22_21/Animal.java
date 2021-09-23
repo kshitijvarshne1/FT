@@ -32,10 +32,10 @@ public class Animal {
     }
 
     // default constructor
-    // by default for type is cat
+    // by default for type is dog
     public Animal() {
-        this.name = "";
-        this.type = "cat";
+        this.name = "Max";
+        this.type = "dog";
         this.age = 0;
         this.training = false;
     }

@@ -15,12 +15,13 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         // creating the array of Animal type
         Animal[] animals = new Animal[6];
-        Animal animal1 = new Animal("sami", "cat", 2, false);
-        Animal animal2 = new Animal("john", "dog", 3, true);
-        Animal animal3 = new Animal("duffle", "dog");
-        Animal animal4 = new Animal("kiki", "cat");
+        Animal animal1 = new Animal("Fluffy", "cat", 5, false);
+        Animal animal2 = new Animal("Kitty", "cat", 1, false);
+        Animal animal3 = new Animal("Milo", "cat", 8, true);
+        Animal animal4 = new Animal("Fritz", "dog");
+        // it simply call the default constructor
         Animal animal5 = new Animal();
-        Animal animal6 = new Animal("diki", "cat", 1, true);
+        Animal animal6 = new Animal("Fido", "dog", 10, true);
         animals = new Animal[]{animal1, animal2, animal3, animal4, animal5, animal6};
         System.out.println("Hello and welcome to the Animal Shelter.");
         System.out.println("Are you interested in adopting a cat? If so enter true, if not enter false");
