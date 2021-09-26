@@ -77,7 +77,7 @@ public class Animal {
     @Override
     public String toString() {
         String trained = this.isTraining() ? "trained" : "not trained";
-        return "the pets name is " + this.getName() + " the pet's age is " + this.getAge() + " the pet is " + trained ;
+        return "the pets name is " + this.getName() + " the pet's age is " + this.getAge() + " the pet is " + trained;
     }
 }
 
