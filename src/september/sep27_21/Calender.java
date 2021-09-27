@@ -7,6 +7,20 @@
 
 package september.sep27_21;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 public class Calender {
+    ArrayList<Integer> years;
+    String[] months;
+    ArrayList<Integer> days;
+    HashMap<Integer, Date> dates;
+
+    public Calender() {
+        years = new ArrayList<>();
+        months = new String[12];
+        days = new ArrayList<>();
+        dates = new HashMap<>();
+    }
 }
 
