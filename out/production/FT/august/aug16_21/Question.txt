@@ -1,0 +1,41 @@
+There are N cars, numbered from 0 to N-1. Each of them has some of the M possible optional features, numbered from 0 to M-1, for example:
+voice control, keyless entry, sunroof, blind spot detection, etc.
+The features of a car are described as a string of M characters, where the K-th character being '1' denotes that the car has the K-th possible feature and '0' denotes that it does not.
+Two cars are similar if their descriptions differ by at most one feature.
+For example: "11101" and "01001" are similar, because they differ only by feature number 2. On the other hand, "01101" and "11110" are not similar, because they differ in feature numbers 0, 3 and 4.
+Each car from the following set is similar to °011°: '011', "111", "001", "010°. Notice that cars "011" and "011" are similar as their set of features is exactly the same.
+We want to suggest to potential customers alternative cars to the one under consideration. In order to do that,
+for each individual car, calculate the number of other cars to which it is similar (differ from it by at most one feature).
+
+
+
+Input Format --
+First line will contain the Number of Testcases
+Second line will contain the size of array of string, N
+Next 'N' lines contains N string denoting array, arr.
+
+Output Format --
+print the maximum score you can obtain
+
+Constraints
+1<=T<=1000
+1<=N<=100
+arr[i]=0 or arr[i]=1
+
+Example
+Input:
+1
+5
+100
+110
+010
+011
+1001
+
+Output:
+2, 3, 2, 1, 2
+
+
+Output Description
+Example: 1. Given cars = ["100", "110", "010", "011", °1001 ] the answer should be [2, 3, 2, 1, 2].
+Car number 0 ("100") is similar to car number 1 ("110") and also to car number 4 ("100").
