@@ -17,5 +17,32 @@ public class Date {
         this.month = month;
         this.day = day;
     }
+
+    public String getDate(){
+        return this.month+" "+this.day+", "+this.year;
+    }
+    public long getYear() {
+        return year;
+    }
+
+    public void setYear(long year) {
+        this.year = year;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
+    }
+
+    public int getDay() {
+        return day;
+    }
+
+    public void setDay(int day) {
+        this.day = day;
+    }
 }
 
