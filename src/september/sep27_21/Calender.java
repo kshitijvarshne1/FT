@@ -9,6 +9,7 @@ package september.sep27_21;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class Calender {
     ArrayList<Integer> years;
@@ -21,6 +22,23 @@ public class Calender {
         months = new String[12];
         days = new ArrayList<>();
         dates = new HashMap<>();
+        for (int i = 1910; i < 2050; i++) {
+            years.add(i);
+        }
+        months = new String[]{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        for (int i = 1; i <= 30; i++) {
+            days.add(i);
+        }
+        int k = 1;
+        for (Integer i : years) {
+            for (int j = 0; j < months.length; j++) {
+                Iterator<Integer> it = days.iterator();
+                while (it.hasNext()) {
+                    dates.put(k++, new Date(i, months[j], it.next()));
+                }
+            }
+        }
     }
+
 }
 
