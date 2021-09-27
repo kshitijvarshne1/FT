@@ -8,5 +8,14 @@
 package september.sep27_21;
 
 public class Date {
+    private long year;
+    private String month;
+    private int day;
+
+    public Date(long year, String month, int day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
 }
 
