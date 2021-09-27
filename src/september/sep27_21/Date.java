@@ -21,6 +21,7 @@ public class Date {
     public String getDate(){
         return this.month+" "+this.day+", "+this.year;
     }
+
     public long getYear() {
         return year;
     }
