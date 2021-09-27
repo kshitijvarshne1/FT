@@ -10,6 +10,7 @@ package september.sep27_21;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 public class Calender {
     ArrayList<Integer> years;
@@ -37,6 +38,13 @@ public class Calender {
                     dates.put(k++, new Date(i, months[j], it.next()));
                 }
             }
+        }
+    }
+
+
+    public void printCalender() {
+        for (Map.Entry<Integer, Date> i : dates.entrySet()) {
+            System.out.println(i.getValue().getDate());
         }
     }
 
