@@ -1,0 +1,7 @@
+One entry was skipped due to a format error.
+One entry was skipped due to a format error.
+Fido poodle 3 17432 true
+Buster pug 6 43254 true
+Gina bulldog 5 3857 true
+Zelda shepherd 4 45827 true
+Gidget pug 3 88954 true

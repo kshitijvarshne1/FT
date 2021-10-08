@@ -8,8 +8,8 @@
 package october.oct08_21;
 
 public class Dog extends Animal {
-    private final int AKCnumber;
-    private final boolean vaccinated;
+    private int AKCnumber;
+    private boolean vaccinated;
 
     public Dog(String name, String breed, int age, int AKCnumber, boolean vaccinated) {
         super(name, breed, age);
@@ -17,12 +17,26 @@ public class Dog extends Animal {
         this.vaccinated = vaccinated;
     }
 
+    public int getAKCnumber() {
+        return AKCnumber;
+    }
+
+    public void setAKCnumber(int AKCnumber) {
+        this.AKCnumber = AKCnumber;
+    }
+
+    public boolean isVaccinated() {
+        return vaccinated;
+    }
+
+    public void setVaccinated(boolean vaccinated) {
+        this.vaccinated = vaccinated;
+    }
+
     @Override
     public String toString() {
-        return super.toString() + " Dog{" +
-                "AKCnumber=" + AKCnumber +
-                ", vaccinated=" + vaccinated +
-                '}';
+        return super.toString() + " , AKC Number : " + this.AKCnumber + " , Vaccinates : " + this.vaccinated;
+
     }
 }
 

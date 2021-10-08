@@ -44,11 +44,7 @@ public class Animal {
 
     @Override
     public String toString() {
-        return "Animal{" +
-                "name='" + name + '\'' +
-                ", breed='" + breed + '\'' +
-                ", age=" + age +
-                '}';
+        return "Name : " + this.name + " , Breed : " + this.breed + " , Age : " + this.age;
     }
 }
 

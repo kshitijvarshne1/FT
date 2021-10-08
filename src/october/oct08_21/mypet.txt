@@ -1,3 +1,5 @@
+Fido 3 17432 true
+Buster pug 6 true
 Fido poodle 3 17432 true
 Buster pug 6 43254 true
 Gina bulldog 5 3857 true
