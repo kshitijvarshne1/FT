@@ -41,7 +41,6 @@ public abstract class Media {
         this.yearPublished = yearPublished;
     }
 
-
     // calculate rental fee; for generic media it is flat fee $1.50
     public double calculateRentalFee() {
         return 1.50;
