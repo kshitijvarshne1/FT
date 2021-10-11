@@ -7,6 +7,23 @@
 
 package october.oct12_21;
 
-public class MovieDVD {
+public class MovieDVD extends Media {
+    // instance variable
+    private double size;
+
+    // constructor
+    public MovieDVD(int id, String title, int yearPublished, double size) {
+        super(id, title, yearPublished);
+        this.size = size;
+    }
+
+    // getter and setter
+    public double getSize() {
+        return size;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
+    }
 }
 
