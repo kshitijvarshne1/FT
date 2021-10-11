@@ -28,13 +28,6 @@ public class EBook extends Media {
         this.numberOfChapter = numberOfChapter;
     }
 
-    @Override
-    public String toString() {
-        return "EBook{" +
-                "numberOfChapter=" + numberOfChapter +
-                '}';
-    }
-
     // calculateRentalFee method
     public double calculateRentalFee() {
         double fee = this.numberOfChapter * 0.10 + 1; // basic fee
@@ -44,6 +37,11 @@ public class EBook extends Media {
             fee += 1;
         }
         return fee;
+    }
+
+    @Override
+    public String toString() {
+        return "EBook [ id=" + this.getId() + ", title=" + this.getTitle() + ", year=" + this.getYearPublished() + ", chapters=" + this.getNumberOfChapter() + "]";
     }
 }
 

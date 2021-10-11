@@ -45,5 +45,6 @@ public abstract class Media {
     public double calculateRentalFee() {
         return 1.50;
     }
+
 }
 
