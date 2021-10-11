@@ -7,6 +7,8 @@
 
 package october.oct12_21;
 
+import java.util.Calendar;
+
 public class MovieDVD extends Media {
     // instance variable
     private double size;
@@ -24,6 +26,17 @@ public class MovieDVD extends Media {
 
     public void setSize(double size) {
         this.size = size;
+    }
+
+    //method to calculate renter fee
+    public double calculateRentalFee() {
+        double fee = 3.25;
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+        // add $5.00 fee if current year is same as published year
+        if (this.getYearPublished() == currentYear) {
+            fee = 5.00;
+        }
+        return fee;
     }
 }
 
