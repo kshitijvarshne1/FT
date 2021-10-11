@@ -7,6 +7,15 @@
 
 package october.oct12_21;
 
-public class Media {
+public abstract class Media {
+    private int id;
+    private String title;
+    private int yearPublished;
+
+    public Media(int id, String title, int yearPublished) {
+        this.id = id;
+        this.title = title;
+        this.yearPublished = yearPublished;
+    }
 }
 
