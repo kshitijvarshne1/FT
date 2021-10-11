@@ -30,18 +30,18 @@ public class EBook extends Media {
 
     // calculateRentalFee method
     public double calculateRentalFee() {
-        double fee = this.numberOfChapter * 0.10 + 1; // basic fee
+        double fee = this.numberOfChapter * 0.10 + 1.00; // basic fee
         int currYear = Calendar.getInstance().get(Calendar.YEAR);
         // add $1.00 fee if current year is same as published year
         if (this.getYearPublished() == currYear) {
-            fee += 1;
+            fee += 1.00;
         }
         return fee;
     }
 
     @Override
     public String toString() {
-        return "EBook [ id=" + this.getId() + ", title=" + this.getTitle() + ", year=" + this.getYearPublished() + ", chapters=" + this.getNumberOfChapter() + "]";
+        return "EBook [ id=" + getId() + ", title=" + getTitle() + ", year=" + getYearPublished() + ", chapters=" + getNumberOfChapter() + "]";
     }
 }
 
