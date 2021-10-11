@@ -7,6 +7,12 @@
 
 package october.oct12_21;
 
-public class EBook {
+public class EBook extends Media{
+    private int numberOfChapter;
+
+    public EBook(int id, String title, int yearPublished, int numberOfChapter) {
+        super(id, title, yearPublished);
+        this.numberOfChapter = numberOfChapter;
+    }
 }
 
