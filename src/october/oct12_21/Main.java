@@ -76,6 +76,7 @@ public class Main {
         while (true) {
             showOption();
             int option = sc.nextInt();
+            // switch case to choose specific option
             switch (option) {
                 case 1:
                     System.out.println("Enter the type of Media");
@@ -158,6 +159,16 @@ public class Main {
                     System.out.println("Thanks for here");
                     System.exit(1);
                     break;
+            }
+            for (int k = 0; k < size; k++) {
+                // store in arrayList
+                if (mediaModel[k].equalsIgnoreCase("E")) {
+                    mediaArrayList.add(new EBook(Integer.parseInt(mediaId[k]), title[k], Integer.parseInt(yearPublished[k]), scopeMedia[k]));
+                } else if (mediaModel[k].equalsIgnoreCase("C")) {
+                    mediaArrayList.add(new MusicCD(Integer.parseInt(mediaId[k]), title[k], Integer.parseInt(yearPublished[k]), scopeMedia[k]));
+                } else if (mediaModel[k].equalsIgnoreCase("D")) {
+                    mediaArrayList.add(new MovieDVD(Integer.parseInt(mediaId[k]), title[k], Integer.parseInt(yearPublished[k]), scopeMedia[k]));
+                }
             }
             manager.loadMediaObject(mediaArrayList);
         }
