@@ -8,6 +8,8 @@
 package october.oct13_21;
 
 
+import october.oct12_21.Media;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -114,7 +116,6 @@ public class Main {
                     if (index3 == -1) {
                         System.out.println("Not found");
                     } else {
-                        rentStatus[index3] = currentStatus;
                         System.out.println("Status updated");
                     }
                     break;
@@ -129,18 +130,17 @@ public class Main {
                     int index1 = manager.modify(idd);
                     if (index1 != -1) {
                         if (type1.equalsIgnoreCase("E")) {
-                            october.oct12_21.EBook e = new october.oct12_21.EBook(idd, title[index1], Integer.parseInt(yearPublished[index1]), scopeMedia[index1]);
-                            calculatedFee[index1] = e.calculateRentalFee();
-                            System.out.println("Modify Fee " + calculatedFee[index1]);
+                            october.oct12_21.Media eee= mediaArrayList.get(index1);
+                            System.out.println("Modify Fee " + eee.calculateRentalFee());
                         } else if (type1.equalsIgnoreCase("C")) {
-                            october.oct12_21.MusicCD cd = new october.oct12_21.MusicCD(idd, title[index1], Integer.parseInt(yearPublished[index1]), scopeMedia[index1]);
-                            calculatedFee[index1] = cd.calculateRentalFee();
-                            System.out.println("Modify Fee " + calculatedFee[index1]);
+                               october.oct12_21.MusicCD cd= (october.oct12_21.MusicCD) mediaArrayList.get(index1);
+                            System.out.println("Modify Fee " + cd.calculateRentalFee());
+
                         } else if (type1.equalsIgnoreCase("D")) {
-                            october.oct12_21.MovieDVD d = new october.oct12_21.MovieDVD(idd, title[index1], Integer.parseInt(yearPublished[index1]), scopeMedia[index1]);
-                            calculatedFee[index1] = d.calculateRentalFee();
-                            System.out.println("Modify Fee " + calculatedFee[index1]);
+                            MovieDVD d= (MovieDVD) mediaArrayList.get(index1);
+                            System.out.println("Modify Fee " + d.calculateRentalFee());
                         }
+
                     } else {
                         System.out.println("Not found");
                     }
@@ -161,19 +161,10 @@ public class Main {
                     System.exit(1);
                     break;
             }
-            for (int k = 0; k < size; k++) {
-                // store in arrayList
-                if (mediaModel[k].equalsIgnoreCase("E")) {
-                    mediaArrayList.add(new october.oct12_21.EBook(Integer.parseInt(mediaId[k]), title[k], Integer.parseInt(yearPublished[k]), scopeMedia[k]));
-                } else if (mediaModel[k].equalsIgnoreCase("C")) {
-                    mediaArrayList.add(new october.oct12_21.MusicCD(Integer.parseInt(mediaId[k]), title[k], Integer.parseInt(yearPublished[k]), scopeMedia[k]));
-                } else if (mediaModel[k].equalsIgnoreCase("D")) {
-                    mediaArrayList.add(new october.oct12_21.MovieDVD(Integer.parseInt(mediaId[k]), title[k], Integer.parseInt(yearPublished[k]), scopeMedia[k]));
-                }
-            }
             manager.loadMediaObject(mediaArrayList);
         }
     }
+
 
     public static void showOption() {
         System.out.println("1. Add\n" +
